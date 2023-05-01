@@ -7,11 +7,20 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.ui.ExtendedModelMap;
+import org.springframework.ui.Model;
 
+import java.util.logging.Logger;
 
 
 @SpringBootApplication
-public class HolaSpringApplication  implements CommandLineRunner {
+@ComponentScan(basePackages = {"mx.com.gm.HolaSpring", "mx.com.gm.dao"})
+public class HolaSpringApplication{
+
+
+	ControladorInicio controladorInicio;
+
 
 
 
@@ -21,8 +30,4 @@ public class HolaSpringApplication  implements CommandLineRunner {
 
 
 
-	@Override
-	public void run(String... args) throws Exception {
-
-	}
 }
