@@ -1,6 +1,6 @@
-package dao.dao;
+package mx.com.gm.dao;
 
-import domain.domain.Persona;
+import mx.com.gm.domain.Persona;
 import org.springframework.data.repository.CrudRepository;
 
 

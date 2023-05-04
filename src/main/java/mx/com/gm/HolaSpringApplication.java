@@ -1,9 +1,7 @@
-package mx.com.gm.HolaSpring;
+package mx.com.gm;
 
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
+import mx.com.gm.web.ControladorInicio;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,17 +9,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
 
-import java.util.logging.Logger;
-
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"mx.com.gm.HolaSpring", "mx.com.gm.dao"})
-public class HolaSpringApplication{
-
+public class HolaSpringApplication implements CommandLineRunner {
 
 	ControladorInicio controladorInicio;
 
-
+	public HolaSpringApplication(ControladorInicio controladorInicio){
+		this.controladorInicio = controladorInicio;
+	}
 
 
 	public static void main(String[] args) {
@@ -29,5 +25,11 @@ public class HolaSpringApplication{
 	}
 
 
+	@Override
+	public void run(String... args) throws Exception {
+		Model model = new ExtendedModelMap();
+		controladorInicio.inicio(model);
+
+	}
 
 }
